@@ -42,3 +42,4 @@ The server also has a Healthcheck endpoint to test if the server is running prop
 
 
 Mario 
+Rikkzazz
