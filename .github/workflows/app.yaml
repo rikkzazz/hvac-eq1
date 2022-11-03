@@ -1,9 +1,9 @@
 # .github/workflows/app.yaml
-name: HVAC_CONTROLLER
+name: HVAC_CONTROLLER-EQ1
 on: push
 
 jobs:
-  test:
+  test-EQ1:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -42,4 +42,7 @@ jobs:
           T_MAX: 60
           T_MIN: 20
 
+      - name: Lint project
+        run: |
+        pipenv run lint
 
