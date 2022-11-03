@@ -44,5 +44,5 @@ jobs:
 
       - name: Lint project
         run: |
-        pipenv run lint
+          pipenv run lint
 
