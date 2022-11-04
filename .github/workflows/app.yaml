@@ -22,7 +22,7 @@ jobs:
           python -m pip install --upgrade pipenv wheel
 
       - id: cache-pipenv
-        uses: actions/cache@v1
+        uses: actions/cachedir@v1
         with:
           path: ~/.local/share/virtualenvs
           key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
@@ -36,9 +36,9 @@ jobs:
         run: |
           pipenv run test
         env:
-          HVAC_HOST: http://159.203.50.71
-          HVAC_TOKEN: Y4A6Q3fEri
-          HVAC_TICKETS: 3
+          HVAC_HOST: ${{ secrets.HVAC_HOST }}
+          HVAC_TOKEN: ${{ secrets.HVAC_TOKEN }}
+          HVAC_TICKETS: ${{ secrets.HVAC_TICKETS }}
           T_MAX: 60
           T_MIN: 20
 
